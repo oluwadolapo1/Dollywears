@@ -9,8 +9,20 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors())
 
+let allCountries = [
+  {
+    name: 'Nigeria',
+    capital: 'Abuja',
+    population: 200000000,
+  },
+  {
+    name: 'United States',
+    capital: 'Washington, D.C.',
+    population: 331000000,
+  },
+]
 app.get('/test', (req, res) => {
-  res.send('Dolapo')
+  res.send(allCountries)
 })
 
 app.listen(port, () =>console.log(`Server started at port ${port}`))
